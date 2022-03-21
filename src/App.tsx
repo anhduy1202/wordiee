@@ -25,7 +25,7 @@ function App() {
  
   return (
     <div className="App">
-      <Heading type="h1" text="Wordle Clone"/>
+      <Heading type="h1" text="Wordiee"/>
       <div className="board-container">
       <Board board={board}/>
       </div>

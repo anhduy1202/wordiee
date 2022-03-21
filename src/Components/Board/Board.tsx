@@ -11,7 +11,6 @@ interface IProps {
 
 const Board: React.FC<IProps> = (props) => {
   const { board } = props;
-  const position = useSelector((state: rootState) => state.board.pos);
 
   return (
     <>

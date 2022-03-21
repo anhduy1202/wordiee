@@ -9,9 +9,9 @@ const initialState = {
  "", "", "", "", "",
  "", "", "", "", ""],
   try: 0,
-  pos: 0,
+  pos: -1,
   key: "",
-  correctWord: "KITTY"
+  correctWord: "APPLE"
 };
 
 export const boardSlice = createSlice({
