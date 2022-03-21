@@ -24,7 +24,7 @@ function App() {
     <div className="App">
       <Heading type="h1" text="Wordle Clone"/>
       <div className="board-container">
-      <Board board={board }/>
+      <Board board={board}/>
       </div>
     </div>
   );

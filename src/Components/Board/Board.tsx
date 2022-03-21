@@ -1,4 +1,5 @@
 import React from "react";
+import KeyBoard from "../KeyBoard/KeyBoard";
 import Square from "../Square/Square";
 import "./board.css";
 
@@ -9,7 +10,8 @@ interface IProps {
 const Board: React.FC<IProps> = (props) => {
   const { board } = props;
   return (
-    <div className="board">
+    <>
+      <div className="board">
         {board.map((square, idx) => {
           return (
             <>
@@ -17,7 +19,11 @@ const Board: React.FC<IProps> = (props) => {
             </>
           );
         })}
-    </div>
+      </div>
+      <div className="keyboard">
+      <KeyBoard />
+      </div>
+    </>
   );
 };
 
