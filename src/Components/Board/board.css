@@ -1,0 +1,10 @@
+.board{
+    color: white;
+    height: 300px;
+    width: 300px;
+    align-self: center;
+    background-color: var(--color-dark-green);
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0.5em;
+}
