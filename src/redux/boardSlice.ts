@@ -22,7 +22,7 @@ export const boardSlice = createSlice({
         state.board = action.payload
     },
     incTry: (state) => {
-      state.try++
+      state.try+=1
     },
     incPos: (state) => {
       state.pos++
