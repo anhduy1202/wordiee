@@ -8,3 +8,19 @@
     cursor: pointer;
     place-items: center;    
   }
+
+#correct {
+  border: none;
+  background-color: rgb(3, 164, 100);
+}
+
+#almost {
+  border: none;
+  background-color: rgb(255, 213, 0);
+}
+
+#wrong {
+  border: none;
+  border: 2px solid var(--color-light-blue);
+  background-color: var(--color-dark-green);
+}

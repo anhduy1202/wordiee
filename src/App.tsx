@@ -3,6 +3,8 @@ import * as allWords from "./words.json"
 import './App.css';
 import Heading from './Components/Heading/Heading';
 import Board from './Components/Board/Board';
+import { useSelector } from 'react-redux';
+import { rootState } from './Components/interface';
 
 
 interface Words {
@@ -12,13 +14,14 @@ interface Words {
 function App() {
  const [wordLists,setWords] = useState<Words>(allWords)
  //6x5 board
- const [board,setBoard] = useState<String[]>(
-["", "", "", "", "",
- "", "", "", "", "",
- "", "", "", "", "",
- "", "", "", "", "",
- "", "", "", "", "",
- "", "", "", "", ""]);
+ const board = useSelector((state:rootState) => state.board.board)
+//  const [board,setBoard] = useState<String[]>(
+// ["", "", "", "", "",
+//  "", "", "", "", "",
+//  "", "", "", "", "",
+//  "", "", "", "", "",
+//  "", "", "", "", "",
+//  "", "", "", "", ""]);
  
   return (
     <div className="App">
