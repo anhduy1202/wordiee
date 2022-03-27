@@ -28,7 +28,6 @@ const KeyBoard: React.FC = () => {
     if (position == 30) {
       alert("The word is: " + correctWord);
     }
-    console.log(board5Words);
     if (allWords.includes(board5Words)) {
     dispatch(setKey("Enter"));
     }
