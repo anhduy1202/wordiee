@@ -18,6 +18,7 @@ const Key: React.FC<IProps> = (props) => {
   const board = useSelector((state: rootState) => state.board.board);
   const position = useSelector((state: rootState) => state.board.pos);
   const key = useSelector((state: rootState) => state.board.key);
+  const state = useSelector((state: rootState) => state.board.try);
   const dispatch = useDispatch();
   const chooseLetter = () => {
     if (position >= 30) return;
@@ -28,7 +29,9 @@ const Key: React.FC<IProps> = (props) => {
       dispatch(incPos());
       dispatch(setKey(""));
     } else {
-      if ((position) % 5 == 0 && (position) !== 0) return;
+      if ((position) % 5 == 0 && (position) !== 0 && Math.floor(position/5) > state) {
+        return;
+      };
       const newBoard = [...board];
       newBoard[position] = letter;
       dispatch(setBoard(newBoard));
