@@ -3,7 +3,8 @@ interface boardState {
     try: number,
     pos: number,
     key: string,
-    correctWord:string
+    correctWord:string,
+    validWords: boolean
 }
 
 export interface rootState {

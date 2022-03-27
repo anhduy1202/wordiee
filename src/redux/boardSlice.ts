@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
-
+import wordList from "../words.json";
+let randomNum = Math.floor(Math.random() * wordList.words.length);
 const initialState = {
   board: 
 ["", "", "", "", "",
@@ -9,9 +10,10 @@ const initialState = {
  "", "", "", "", "",
  "", "", "", "", ""],
   try: 0,
-  pos: -1,
+  pos: 0,
   key: "",
-  correctWord: "APPLE"
+  validWords: true,
+  correctWord: wordList.words[randomNum].toUpperCase()
 };
 
 export const boardSlice = createSlice({
@@ -32,6 +34,9 @@ export const boardSlice = createSlice({
     },
     setKey: (state,action) => {
       state.key = action.payload
+    },
+    setValid: (state,action) => {
+      state.validWords = action.payload;
     }
   }
 });
@@ -41,6 +46,7 @@ export const {
     setKey,
     incPos,
     decPos,
-    incTry
+    incTry,
+    setValid
 } = boardSlice.actions;
 export default boardSlice.reducer;

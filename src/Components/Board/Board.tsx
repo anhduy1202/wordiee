@@ -18,7 +18,7 @@ const Board: React.FC<IProps> = (props) => {
         {board.map((square, idx) => {
           return (
             <>
-              <Square val={board[idx]} />
+              <Square val={board[idx]} squareIdx={idx}/>
             </>
           );
         })}
