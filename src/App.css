@@ -39,12 +39,13 @@
   padding-top: 2em;
   height: 100vh;
   display: flex;
+  overflow: hidden;
   flex-direction: column;
 }
 
 html,
 body {
-  overflow:scroll;
+  overflow: hidden;
   margin: 0;
   min-height: 100vh;
 }

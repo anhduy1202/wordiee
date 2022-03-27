@@ -21,6 +21,5 @@
 
 #wrong {
   border: none;
-  border: 2px solid var(--color-light-blue);
   background-color: rgb(72, 72, 72);
 }
