@@ -1,9 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
-  decPos,
   incPos,
-  incTry,
   setBoard,
   setKey,
 } from "../../redux/boardSlice";
@@ -29,7 +27,7 @@ const Key: React.FC<IProps> = (props) => {
       dispatch(incPos());
       dispatch(setKey(""));
     } else {
-      if ((position) % 5 == 0 && (position) !== 0 && Math.floor(position/5) > state) {
+      if (Math.floor(position/5) > state) {
         return;
       };
       const newBoard = [...board];

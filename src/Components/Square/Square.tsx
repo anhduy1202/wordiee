@@ -1,4 +1,3 @@
-import { latest } from "immer/dist/internal";
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { rootState } from "../interface";
@@ -16,7 +15,6 @@ const Square: React.FC<IProps> = (props) => {
   );
   const position = useSelector((state: rootState) => state.board.pos);
   const state = useSelector((state: rootState) => state.board.try);
-  const validWords = useSelector((state: rootState) => state.board.validWords);
 
   let wordLastIndex = 4;
   let currentPos =

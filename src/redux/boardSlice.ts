@@ -12,7 +12,6 @@ const initialState = {
   try: 0,
   pos: 0,
   key: "",
-  validWords: true,
   correctWord: wordList.words[randomNum].toUpperCase()
 };
 
@@ -35,9 +34,6 @@ export const boardSlice = createSlice({
     setKey: (state,action) => {
       state.key = action.payload
     },
-    setValid: (state,action) => {
-      state.validWords = action.payload;
-    }
   }
 });
 
@@ -47,6 +43,5 @@ export const {
     incPos,
     decPos,
     incTry,
-    setValid
 } = boardSlice.actions;
 export default boardSlice.reducer;
