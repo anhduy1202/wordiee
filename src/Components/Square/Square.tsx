@@ -18,14 +18,14 @@ const Square: React.FC<IProps> = (props) => {
 
   let wordLastIndex = 4;
   let currentPos =
-    position == 5
+    position === 5
       ? wordLastIndex
-      : position > 5 && position % 5 == 0
+      : position > 5 && position % 5 === 0
       ? wordLastIndex
       : (position % 5) - 1;
-  const [correct, setCorrect] = useState<Boolean>();
-  const [almost, setAlmost] = useState<Boolean>();
-  const [wrong, setwrong] = useState<Boolean>();
+  const [correct, setCorrect] = useState<Boolean>(false);
+  const [almost, setAlmost] = useState<Boolean>(false);
+  const [wrong, setwrong] = useState<Boolean>(false);
 
   useEffect(() => {
     if (correctWord[currentPos] === val) {
@@ -35,6 +35,11 @@ const Square: React.FC<IProps> = (props) => {
     } else if (!correct && val !== "" && !correctWord.includes(val)) {
       setwrong(true);
     }
+    return () => {
+      setCorrect(false);
+      setAlmost(false);
+      setwrong(false);
+    };
   }, [val]);
   const status: any =
     Math.floor(squareIdx / 5) < state &&
