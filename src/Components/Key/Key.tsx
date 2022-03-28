@@ -20,7 +20,7 @@ const Key: React.FC<IProps> = (props) => {
   const dispatch = useDispatch();
   const chooseLetter = () => {
     if (position >= 30) return;
-    else if (key == "Enter") {
+    else if (key === "Enter") {
       const newBoard = [...board];
       newBoard[position] = letter;
       dispatch(setBoard(newBoard));
