@@ -31,7 +31,7 @@ const KeyBoard: React.FC = () => {
         alert("Invalid words");
       }
     }
-    if (position == 30) {
+    if (position === 30 && allWords.includes(board5Words) ) {
       alert("The word is: " + correctWord);
     }
   };
