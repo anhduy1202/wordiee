@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import wordList from "../../words.json";
-import { decPos, incTry, setBoard, setKey, setValid } from "../../redux/boardSlice";
+import { decPos, incTry, setBoard, setKey } from "../../redux/boardSlice";
 import { rootState } from "../interface";
 import Key from "../Key/Key";
 import "./keyboard.css";
@@ -21,19 +21,18 @@ const KeyBoard: React.FC = () => {
 
   const clickEnter = () => {
     if (key !== "Enter") {
-      if (position % 5 == 0 && position !== 0 && ((position - 1) / 5) > state) {
-        dispatch(incTry());
+      if (allWords.includes(board5Words)) {
+        if (position % 5 == 0 && position !== 0 && ((position - 1) / 5) > state) {
+          dispatch(incTry());
+        }      
+        dispatch(setKey("Enter"));
+      }
+      else if (!allWords.includes(board5Words)) {
+        alert("Invalid words");
       }
     }
     if (position == 30) {
       alert("The word is: " + correctWord);
-    }
-    if (allWords.includes(board5Words)) {
-    dispatch(setKey("Enter"));
-    }
-    else if (!allWords.includes(board5Words)) {
-      alert("Invalid words");
-      dispatch(setValid(false));
     }
   };
 

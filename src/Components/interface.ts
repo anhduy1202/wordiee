@@ -4,7 +4,6 @@ interface boardState {
     pos: number,
     key: string,
     correctWord:string,
-    validWords: boolean
 }
 
 export interface rootState {
