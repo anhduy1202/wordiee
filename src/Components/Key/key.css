@@ -1,0 +1,11 @@
+.letter {
+    background-color: grey;
+    color: white;
+    font-weight: var(--font-bold);
+    font-size: var(--font-md);
+    margin: 0.25em;
+    border-radius: 4px;
+    padding: 0.35em;
+    cursor: pointer;
+}
+

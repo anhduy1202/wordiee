@@ -1,0 +1,10 @@
+.square {
+    font-size: 2rem;
+    height: 48px;
+    width: 48px;
+    text-align:center;
+    border: 2px solid var(--color-light-blue);
+    background:none;
+    cursor: pointer;
+    place-items: center;    
+  }
