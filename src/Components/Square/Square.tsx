@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { rootState } from "../interface";
 import "./square.css";
+import { motion } from "framer-motion";
 
 interface IProps {
   val: string;
@@ -9,6 +10,20 @@ interface IProps {
 }
 
 const Square: React.FC<IProps> = (props) => {
+  const variants = {
+    filled: () => ({ 
+      scale:[1.2,1],
+      transition: {
+        duration: 0.2
+      }
+     }),
+    unfilled: () => ({ 
+      scale:[1.2,1],
+      transition: {
+        duration: 0.2
+      }
+     }),
+  };
   const { val, squareIdx } = props;
   const correctWord = useSelector(
     (state: rootState) => state.board.correctWord
@@ -41,11 +56,11 @@ const Square: React.FC<IProps> = (props) => {
     (correct ? "correct" : almost ? "almost" : wrong ? "wrong" : "");
 
   return (
-    <>
+    <motion.div animate={val ? "filled" : "unfilled"} variants={variants}>
       <div className="square" id={status}>
         {val}
       </div>
-    </>
+    </motion.div>
   );
 };
 
